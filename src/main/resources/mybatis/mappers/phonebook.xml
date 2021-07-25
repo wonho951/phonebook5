@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="phonebook">
+
+	<!-- 전체 리스트 가져오는 쿼리문 -->
+	<!-- id는 변수명 걍 이름 지어주면 됨. -->
+	<!-- resultType는 경로 지정해주는거임. 어디에 담을지. 경로 맞아야함.  vo에는 디폴트 생성자 있어야한다.-->
+	<select id="selectList" resultType = "com.javaex.vo.PersonVo">
+		<![CDATA[
+				select person_id personId,
+			  		   name,
+					   hp,
+					   company
+				from person
+				order by person_id desc
+		]]>
+	</select>
+
+
+	<!-- 전화번호 저장하는 쿼리문 -->
+	<insert id="personInsert" parameterType="com.javaex.vo.PersonVo">
+		<![CDATA[
+			insert into person
+			values(
+    			SEQ_PERSON_ID.nextval,
+    			#{name},
+    			#{hp},
+   				#{company}
+			 )
+		]]>	
+	</insert>
+	
+
+
+</mapper>
