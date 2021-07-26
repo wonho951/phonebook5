@@ -42,4 +42,22 @@
 	</delete>
 
 
+
+	<!-- 수정폼 쿼리문 한사람의 정보만 가져오는거 -->
+	<!-- 전화번호 1명 가져오기 -->
+	<select id = "selectPerson" parameterType = "int">
+		<![CDATA[
+			select  person_id,
+					name,
+					hp,
+					company
+			from person	
+			where person_id = #{personId}
+		]]>
+	
+	
+	</select>
+
+
+
 </mapper>

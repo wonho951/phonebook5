@@ -84,7 +84,7 @@ public class PhoneController {
     	//PhoneDao phoneDao = new PhoneDao();
     	
     	//Dao의 personDelete() 사용해서 데이터 삭제
-    	//int count = phoneDao.personDelete(personId);
+    	int count = phoneDao.personDelete(personId);
     	
     	//view --> 리다이렉트
     	return "redirect:/list";

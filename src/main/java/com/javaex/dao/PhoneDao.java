@@ -45,7 +45,7 @@ public class PhoneDao {
 	
 	//전화번호 삭제
 	public int personDelete(int personId) {
-		System.out.println("[PhoneController.write]");
+		System.out.println("[PhoneController.delete]");
 		System.out.println(personId);
 		
 		sqlSession.delete("phonebook.personDelete", personId);
@@ -54,6 +54,7 @@ public class PhoneDao {
 	}
 	
 	
+	//수정폼
 	
 	
 	
