@@ -4,16 +4,14 @@
 <mapper namespace="phonebook">
 
 
-	<!-- 보통 맨 위에 씀 -->
+	<!-- 보통 맨 위에 씀, 컬럼명을 맞춰주겠다. -->
 	<!-- 타입은 모양 맞춰주는거 -->
-	<resultMap id="resultMapPersonVo" type="com.javaex.vo.PersonVo">
+	<resultMap id="resultMapPersonVo" type = "com.javaex.vo.PersonVo">
 		<result column="person_id" property="personId" />  
 		<result column="name" property="name" />
 	    <result column="hp" property="hp" />
 	    <result column="company" property="company" />	
 	</resultMap>
-
-
 
 
 
@@ -57,12 +55,11 @@
 	</delete>
 
 
-
-	<!-- 수정폼 쿼리문 한사람의 정보만 가져오는거 -->
+	<!-- resultMap 사용  resultType이랑 주의-->
 	<!-- 전화번호 1명 가져오기 -->
-	<select id = "selectPerson" parameterType = "int" resultType = "com.javaex.vo.PersonVo" >
+	<select id = "selectPerson" parameterType = "int" resultMap = "resultMapPersonVo" >
 		<![CDATA[
-			select  person_id personId,
+			select  person_id,
 					name,
 					hp,
 					company
@@ -71,6 +68,31 @@
 		]]>
 	</select>
 
+
+
+	<!-- 수정폼 쿼리문 한사람의 정보만 가져오는거 -->
+	<!-- 전화번호 1명 가져오기 -->
+	<!-- 	
+		<select id = "selectPerson" parameterType = "int" resultType = "com.javaex.vo.PersonVo" >
+		<![CDATA[
+			select  person_id,
+					name,
+					hp,
+					company
+			from person	
+			where person_id = #{personId}
+		]]>
+	</select> 
+	-->
+
+
+
+	<select id = "total" resultType="com.javaex.vo.PersonVo">
+		<![CDATA[
+			select *(count)
+			from person
+		]]>
+	</select>
 
 
 </mapper>
