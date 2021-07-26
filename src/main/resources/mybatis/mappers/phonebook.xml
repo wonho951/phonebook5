@@ -31,6 +31,14 @@
 		]]>	
 	</insert>
 	
+	
+	<!-- 전화번호 지우는 쿼리문 -->
+	<insert id="personDelete" parameterType="com.javaex.vo.PersonVo">
+		<![CDATA[
+			delete from person
+			where person_id = #{personId}	
+		]]>
+	</insert>
 
 
 </mapper>

@@ -33,7 +33,7 @@ public class PhoneDao {
 	
 	//전화번호 저장
 	public int personInsert(PersonVo personVo) {
-		System.out.println("[PhoneController.write]");	//건들수 있는 영역이 아니기 때문에 제대로 들어갔나 확인.
+		System.out.println("[PhoneController.insert]");	//건들수 있는 영역이 아니기 때문에 제대로 들어갔나 확인.
 		System.out.println(personVo);
 		
 		sqlSession.insert("phonebook.personInsert", personVo);	//데이터를 personVo에 넘겨준다.
@@ -43,8 +43,13 @@ public class PhoneDao {
 	
 	
 	
-	
-	
+	//전화번호 삭제
+	public int personDelete(int personId) {
+		System.out.println("[PhoneController.write]");
+		System.out.println(personId);
+		
+		return 1;
+	}
 	
 	
 	
