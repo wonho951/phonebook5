@@ -55,7 +55,17 @@ public class PhoneDao {
 	
 	
 	//수정폼
-	
+	public PersonVo getPerson(int personId) {
+		System.out.println("[PhoneController.updateForm]");
+		
+		//들어갈때 데이터 찍어보기
+		System.out.println(personId);
+		
+		PersonVo personVo = sqlSession.selectOne("phonebook.selectPerson", personId);
+		//나올때 데이터 찍어보기
+		System.out.println(personVo);
+		return personVo;
+	}
 	
 	
 	

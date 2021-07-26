@@ -45,17 +45,15 @@
 
 	<!-- 수정폼 쿼리문 한사람의 정보만 가져오는거 -->
 	<!-- 전화번호 1명 가져오기 -->
-	<select id = "selectPerson" parameterType = "int">
+	<select id = "selectPerson" parameterType = "int" resultType = "com.javaex.vo.PersonVo" >
 		<![CDATA[
-			select  person_id,
+			select  person_id personId,
 					name,
 					hp,
 					company
 			from person	
 			where person_id = #{personId}
 		]]>
-	
-	
 	</select>
 
 
