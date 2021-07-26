@@ -19,7 +19,7 @@
 	<!-- 전체 리스트 가져오는 쿼리문 -->
 	<!-- id는 변수명 걍 이름 지어주면 됨. -->
 	<!-- resultType는 경로 지정해주는거임. 어디에 담을지. 경로 맞아야함.  vo에는 디폴트 생성자 있어야한다.-->
-	<select id="selectList" resultType = "com.javaex.vo.PersonVo">
+	<select id="selectList" resultType = "PersonVo">
 		<![CDATA[
 				select person_id personId,
 			  		   name,
@@ -69,9 +69,23 @@
 	</delete>
 
 
-	<!-- resultMap 사용  resultType이랑 주의-->
+	<!-- resultMap 사용 -->
 	<!-- 전화번호 1명 가져오기 -->
 	<select id = "selectPerson" parameterType = "int" resultMap = "resultMapPersonVo" >
+		<![CDATA[
+			select  person_id,
+					name,
+					hp,
+					company
+			from person	
+			where person_id = #{personId}
+		]]>
+	</select>
+
+
+
+	<!-- 전화번호 1명 가져오기 resultType이 Map 사용 -->
+	<select id = "selectPerson2" parameterType = "int" resultType = "Map">
 		<![CDATA[
 			select  person_id,
 					name,

@@ -30,7 +30,7 @@
 				<td>${personList.company }</td>
 			</tr>	
 			<tr>
-				<td><a href = "${pageContext.request.contextPath }/updateForm?personId=${personList.personId }">수정폼</a></td>
+				<td><a href = "${pageContext.request.contextPath }/updateForm2?personId=${personList.personId }">수정폼</a></td>
 				<td><a href = "${pageContext.request.contextPath }/delete?personId=${personList.personId }">삭제</a></td>
 			</tr>
 			<br>

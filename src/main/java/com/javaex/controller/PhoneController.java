@@ -1,6 +1,7 @@
 package com.javaex.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -125,7 +126,18 @@ public class PhoneController {
     
     
     //수정폼2
-    
+    @RequestMapping(value = "/updateForm2", method = {RequestMethod.GET, RequestMethod.POST})
+    public String updateForm2(Model model, @RequestParam("personId") int personId) {
+    	System.out.println("수정폼2");
+    	System.out.println(personId);
+    	
+    	Map<String, Object> personMap = phoneDao.getPerson2(personId);
+    	System.out.println(personMap);
+    	
+    	model.addAttribute("pMap", personMap);
+    	
+    	return "/WEB-INF/views/updateForm2.jsp";
+    }
     
     
     //수정

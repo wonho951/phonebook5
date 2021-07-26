@@ -79,7 +79,7 @@ public class PhoneDao {
 	}
 	
 	
-	//수정폼
+	//수정폼, 전화번호 가져오기
 	public PersonVo getPerson(int personId) {
 		System.out.println("[PhoneController.updateForm]");
 		
@@ -94,7 +94,18 @@ public class PhoneDao {
 	
 	
 	
-	
+	//수정폼2, 전화번호 가져오기2
+	public Map<String, Object> getPerson2(int personId) {
+		System.out.println("[PhoneController.updateForm]");
+		//System.out.println(personId);
+		
+		Map<String, Object> personMap = sqlSession.selectOne("phonebook.selectPerson2", personId);
+		//System.out.println(personMap);
+		//System.out.println(personMap.get("PERSON_ID"));
+		
+		
+		return personMap;
+	}
 	
 	
 	
