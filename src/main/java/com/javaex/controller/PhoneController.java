@@ -42,7 +42,7 @@ public class PhoneController {
 		 model.addAttribute("personList", personList);
 		
 		 //ModelAndView 에서 View 공간
-		return "/WEB-INF/views/list.jsp";	// DispatcherServlet 에게 test.jsp로 포워드 하라는 뜻.
+		return "list";	// DispatcherServlet 에게 test.jsp로 포워드 하라는 뜻.
 		
 	}
 	
@@ -52,7 +52,7 @@ public class PhoneController {
 	public String writeForm() {
 		System.out.println("[PhoneController.writeFrom]");
 		
-		return "/WEB-INF/views/writeForm.jsp";	// DispatcherServlet 에게 test.jsp로 포워드 하라는 뜻.
+		return "writeForm";	// DispatcherServlet 에게 test.jsp로 포워드 하라는 뜻.
 	}
 	
 	
@@ -121,7 +121,7 @@ public class PhoneController {
     	model.addAttribute("personVo", personVo);
     	
     	//view 
-    	return "/WEB-INF/views/updateForm.jsp";
+    	return "updateForm";
     }
     
     
@@ -136,7 +136,7 @@ public class PhoneController {
     	
     	model.addAttribute("pMap", personMap);
     	
-    	return "/WEB-INF/views/updateForm2.jsp";
+    	return "updateForm2";
     }
     
     
@@ -178,22 +178,13 @@ public class PhoneController {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
 	
 	//테스트
 	@RequestMapping(value="/test")	//이름 주는거 action역할
 	public String test() {
 		System.out.println("test");
 	
-		return "/WEB-INF/views/test.jsp";	// DispatcherServlet 에게 test.jsp로 포워드 하라는 뜻. 
+		return "test";	// DispatcherServlet 에게 test.jsp로 포워드 하라는 뜻. 
 											// 포워드 되는 파일을 알려줌.
 	}
 }
