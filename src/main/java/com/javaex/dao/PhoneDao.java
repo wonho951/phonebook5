@@ -59,8 +59,10 @@ public class PhoneDao {
 		personMap.put("hp", hp);
 		personMap.put("company", company);
 		
+		
+		System.out.println(personMap);
 		int count = sqlSession.insert("phonebook.personInsert2", personMap);
-		System.out.println(count);
+		System.out.println("dao결과:" + count);
 		
 		return 1;
 	}

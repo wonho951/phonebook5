@@ -83,10 +83,10 @@ public class PhoneController {
     	System.out.println("[PhoneController.write2]");
 
     	
-    	int count = phoneDao.personInsert2(name, hp, name);
+    	int count = phoneDao.personInsert2(name, hp, company);
     	
     	
-    	return "";
+    	return "redirect:/list";
     }
     
     
@@ -122,6 +122,10 @@ public class PhoneController {
     	//view 
     	return "/WEB-INF/views/updateForm.jsp";
     }
+    
+    
+    //수정폼2
+    
     
     
     //수정
