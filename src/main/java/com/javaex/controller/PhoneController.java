@@ -157,10 +157,10 @@ public class PhoneController {
     
     //수정2, Map 사용
     @RequestMapping(value = "/update2", method = {RequestMethod.GET, RequestMethod.POST} )
-    public String update2(Model model, @RequestParam("personId") int personId,
-    								   @RequestParam("name") String name,
-    								   @RequestParam("hp") String hp,
-    								   @RequestParam("company") String company) {
+    public String update2( @RequestParam("personId") int personId,
+    					   @RequestParam("name") String name,
+    					   @RequestParam("hp") String hp,
+    					   @RequestParam("company") String company) {
         System.out.println("수정2");
         System.out.println(personId + ","+ name + ","+hp +","+company);
         
