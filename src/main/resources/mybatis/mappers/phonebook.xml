@@ -45,6 +45,20 @@
 	</insert>
 	
 	
+	
+	<!-- 전화번호저장 Map사용 -->
+	<insert id="personInsert2" parameterType="Map">
+		<![CDATA[
+			insert into person
+			values(
+	   			SEQ_PERSON_ID.nextval,
+	   			#{name},
+	   			#{hp},
+				#{company}
+			 )
+		]]>
+	</insert>
+	
 	<!-- 전화번호 지우는 쿼리문 -->
 	<!-- 파라미터 타입은 자료형을 써줘도 된다 -->
 	<delete id="personDelete" parameterType="int">
@@ -93,6 +107,16 @@
 			from person
 		]]>
 	</select>
-
+	
+	
+	<!-- 수정하기 -->
+	<update id="personUpdate">
+		update person
+		set name,
+			hp,
+			company
+		where person_id = #{personId}
+	
+	</update>
 
 </mapper>

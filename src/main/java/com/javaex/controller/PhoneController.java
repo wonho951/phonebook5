@@ -75,6 +75,21 @@ public class PhoneController {
 	
     
     
+    //쓰기2(파라미터로 받을때)
+    @RequestMapping(value = "/write2", method = {RequestMethod.GET, RequestMethod.POST})
+    public String write2(@RequestParam("name") String name,
+    					 @RequestParam("hp") String hp,
+    					 @RequestParam("company") String company) {
+    	System.out.println("[PhoneController.write2]");
+
+    	
+    	int count = phoneDao.personInsert2(name, hp, name);
+    	
+    	
+    	return "";
+    }
+    
+    
     //삭제
     @RequestMapping(value = "/delete", method = {RequestMethod.GET, RequestMethod.POST})
     public String delete(@RequestParam("personId") int personId) {

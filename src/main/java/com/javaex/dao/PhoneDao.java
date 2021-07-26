@@ -1,6 +1,8 @@
 package com.javaex.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +43,27 @@ public class PhoneDao {
 		return 1;
 	}
 	
+	
+	//전화번호 저장2
+	//Map 사용	--> vo로 만들면 편하지만 이번 한번만 쓸시에 map사용할 수 있음
+	public int personInsert2(String name, String hp, String company) {
+		System.out.println("[PhoneController.insert2]");
+		System.out.println(name);
+		System.out.println(hp);
+		System.out.println(company);
+		
+		
+		//Map를 사용해서 데이터를 묶는다.
+		Map<String, Object> personMap = new HashMap<String,Object>();
+		personMap.put("name", name);
+		personMap.put("hp", hp);
+		personMap.put("company", company);
+		
+		int count = sqlSession.insert("phonebook.personInsert2", personMap);
+		System.out.println(count);
+		
+		return 1;
+	}
 	
 	
 	//전화번호 삭제

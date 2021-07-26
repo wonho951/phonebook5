@@ -13,7 +13,7 @@
 			아래 항목을 기입하고 '등록' 버튼을 클릭하세요.
 		</p>
 		
-		<form action= "${pageContext.request.contextPath }/write" method="get">
+		<form action= "${pageContext.request.contextPath }/write2" method="get">
 			이름(name):<input type ="text" name="name" value=""> <br> 
 			핸드폰(hp):<input type ="text" name="hp" value=""> <br>
 			회사(company):<input type ="text" name="company" value=""> <br>
