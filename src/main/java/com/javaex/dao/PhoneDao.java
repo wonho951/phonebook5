@@ -48,6 +48,9 @@ public class PhoneDao {
 		System.out.println("[PhoneController.write]");
 		System.out.println(personId);
 		
+		sqlSession.delete("phonebook.personDelete", personId);
+		
+		
 		return 1;
 	}
 	
