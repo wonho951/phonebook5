@@ -50,7 +50,6 @@ public class PhoneDao {
 		
 		sqlSession.delete("phonebook.personDelete", personId);
 		
-		
 		return 1;
 	}
 	

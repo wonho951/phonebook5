@@ -33,7 +33,8 @@
 	
 	
 	<!-- 전화번호 지우는 쿼리문 -->
-	<delete id="personDelete" parameterType="com.javaex.vo.PersonVo">
+	<!-- 파라미터 타입은 자료형을 써줘도 된다 -->
+	<delete id="personDelete" parameterType="int">
 		<![CDATA[
 			delete from person
 			where person_id = #{personId}	
