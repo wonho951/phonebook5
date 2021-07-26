@@ -146,18 +146,30 @@ public class PhoneController {
         System.out.println("수정");
         System.out.println(personVo);
         
-        //Dao사용
-        //PhoneDao phoneDao = new PhoneDao();     
-        
+
         //Dao의 personInsert() 이용해서 데이터 저장
-        //phoneDao.personUpdate(personVo);
+        int count = phoneDao.personUpdate(personVo);
         
         //view --> 리다이렉트
         return "redirect:/list";
     }
     
     
-    
+    //수정2, Map 사용
+    @RequestMapping(value = "/update2", method = {RequestMethod.GET, RequestMethod.POST} )
+    public String update2(Model model, @RequestParam("personId") int personId,
+    								   @RequestParam("name") String name,
+    								   @RequestParam("hp") String hp,
+    								   @RequestParam("company") String company) {
+        System.out.println("수정2");
+        System.out.println(personId + ","+ name + ","+hp +","+company);
+        
+        phoneDao.personUpdate2(personId, name, hp, company);
+        
+        
+        //view --> 리다이렉트
+        return "redirect:/list";
+    }
 
 	
     

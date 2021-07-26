@@ -123,14 +123,23 @@
 	</select>
 	
 	
-	<!-- 수정하기 -->
-	<update id="personUpdate">
+	<!-- 수정하기, 쿼리문은 틀리지 말자 인간적으로... -->
+	<update id="personUpdate" parameterType="int">
 		update person
-		set name,
-			hp,
-			company
+		set name = #{name},
+			hp = #{hp},
+			company = #{company}
 		where person_id = #{personId}
-	
 	</update>
-
+	
+	
+	
+		<!-- 수정하기, 쿼리문은 틀리지 말자 인간적으로... -->
+	<update id="personUpdate2" parameterType="Map">
+		update person
+		set name = #{name},
+			hp = #{hp},
+			company = #{company}
+		where person_id = #{personId}
+	</update>
 </mapper>
